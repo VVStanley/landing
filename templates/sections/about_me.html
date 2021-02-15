@@ -1,0 +1,17 @@
+{% load solo_tags %}
+{% get_solo 'home.AboutMeBlock' as data %}
+{% get_solo 'home.InfoCompany' as info %}
+
+<section class="section me">
+    <div class="container">
+        <div class="me__block">
+            <div class="me__left">
+                {{ data.frame_youtube|safe }}
+            </div>
+            <div class="me__right">
+                <div class="me__title">{{ data.caption }}<br>Проконсультирую вас бесплатно по телефону <a href="tel:{{ info.phone }}">{{ info.get_format_phone }}</a></div>
+                <div class="me__desc">{{ data.description }}</div>
+            </div>
+        </div>
+    </div>
+</section>

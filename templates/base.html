@@ -1,0 +1,60 @@
+{% load static %}
+{% load solo_tags %}
+{% get_solo 'home.Seo' as seo %}
+{% get_solo 'home.Metrics' as metrics %}
+{% get_solo 'home.InfoCompany' as info %}
+
+<!DOCTYPE html>
+<html lang="ru-RU">
+  <head>
+    <meta charset="utf-8">
+    <title>{{ seo.title }}</title>
+    <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE = edge"><![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="{{ seo.description }}">
+    <meta name="keywords" content="{{ seo.keywords }}">
+    <meta property="og:url" content="#">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="{{ info.name }}">
+    <meta property="og:description" content="{{ seo.description }}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/fontawesome.min.css' %}">
+    <!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script><![endif]-->
+  </head>
+  <body>
+
+    {% include 'partials/header.html' %}
+
+    <div class="content">
+    
+        {% include 'sections/main.html' %}
+
+        {% include 'sections/about_me.html' %}
+
+        {% include 'sections/profit.html' %}
+
+        {% include 'sections/portfolio.html' %}
+
+        <section class="section price">
+          {% include 'sections/flat_roof.html' %}
+          {% include 'sections/slop_roof.html' %}
+        </section>
+
+        {% include 'sections/advantages.html' %}
+
+        {% include 'sections/question.html' %}
+
+    </div>
+
+    {% include 'partials/modal.html' %}
+
+    <footer class="footer"></footer>
+    <script src="{% static 'js/libs.min.js' %}"></script>
+    <script src="{% static 'js/sweetalert.min.js' %}"></script>
+    <script src="{% static 'js/jquery.maskedinput.min.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+    {{ metrics.yandex|safe }}
+    {{ metrics.widget|safe }}
+  </body>
+</html>

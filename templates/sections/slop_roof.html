@@ -1,0 +1,20 @@
+{% load solo_tags %}
+{% get_solo 'home.BlockSlopRoof' as slop_roof %}
+
+<div class="container">
+    <h2 class="price__title">{{ slop_roof.caption }}</h2>
+    <p class="price__desc">{{ slop_roof.description }}</p>
+    <p class="price__small">{{ slop_roof.about_info }}</p>
+    <div class="price-block">
+    {% for price in slop_roof.slop_prices.all %}    
+        <div class="price-block__item">
+            <div class="price-block__img"><img src="{{ price.image.url }}" alt="{{ price.work }}"></div>
+            <h4 class="price-block__title">{{ price.work }}</h4>
+            <div class="price-block__price">от {{ price.price }} руб./м2</div>
+            <div class="price-block__button">
+            <button class="btn small" data-item="{{ price.work }}" id="{{ price.id }}" data-subject="Рассчитать кровлю">Рассчитать кровлю</button>
+            </div>
+        </div>
+    {% endfor %}
+    </div>
+</div>

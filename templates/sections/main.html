@@ -1,0 +1,29 @@
+{% load solo_tags %}
+{% get_solo 'home.MainBlock' as data %}
+
+<section class="one">
+    <div class="container">
+        <div class="left">
+        <h1 class="one-title one__title">{{ data.caption }}</h1>
+        <div class="one__desc">{{ data.description }}</div>
+        <div class="one_subtitle">
+            <ul class="one__subtitlelist">
+            <li>Бесплатно проведем осмотр и замер объекта в черте г. Краснодара</li>
+            <li>Проконсультируем по подбору материала и снижению затрат на строительство</li>
+            <li>Рассчитаем количество материалов и составим смету</li>
+            </ul>
+        </div>
+        <div class="one__button">
+            <button class="btn" data-item="Рассчитать кровлю - главный экран" id="MAIN_FORM" data-subject="Рассчитать кровлю">
+            <i class="fas fa-calculator mr-2"></i>
+            Рассчитать кровлю
+            </button>
+        </div>
+        </div>
+        {% if data.image %}
+            <img src="{{ data.image.url }}" alt="{{ data.alt }}" class="right" style="opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);">
+        {% else %}
+            <p>Добавьте изображение</p>
+        {% endif %}
+    </div>
+</section>

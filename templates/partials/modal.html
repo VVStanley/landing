@@ -1,0 +1,27 @@
+<div class="price-form form">
+<div class="form__block">
+    <form id="priceForm" method="POST">
+        <h3 class="form__title"></h3>
+        <input type="hidden" name="item" value="">
+        <input type="hidden" name="subject" value="">
+        <div class="form_input">
+            <input class="input-field form__name" type="text" placeholder="Имя" name="name" required>
+        </div>
+        <div class="form_input">
+            <input class="input-field form__phone" type="tel" placeholder="Телефон" name="phone" required>
+        </div>
+        <div class="form_input">
+            <button class="btn" type="submit" id="FORMSEND">
+            <svg class="svg-sprite-icon icon-paper-plane btn__icon">
+                <use xlink:href="static/images/svg/symbol/sprite.svg#paper-plane"></use>
+            </svg>Отправить заявку
+            </button>
+        </div>
+        <p class="politika">
+            {% csrf_token %}
+            <input type="checkbox" name="send_ok" id="check" checked>
+            <label for="check"><span>Я согласен с <a href="#" target="_blank">правилами обработки данных</a></span></label>
+        </p>
+    </form>
+</div>
+</div>

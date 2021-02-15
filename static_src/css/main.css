@@ -1,0 +1,53 @@
+.one .right {
+    width: 50%;
+    float: right;
+    height: 100vh;
+    background: none;
+    background-size: cover;
+}
+.one img{
+    width: 50%;
+    float: right;
+    height: 100vh;
+    background-size: cover;
+}
+.mr-2{
+    margin-right: 20px;
+}
+.me__block {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.me__left{
+    min-width: 100%;
+    padding-right: 0;
+}
+.me__left iframe{
+    min-height: 300px;
+}
+.me__right{
+    width: 100%;
+}
+@media (min-width: 576px) {
+    .me__left iframe{
+        min-height: 420px;
+    }
+}
+@media (min-width: 1024px) {
+    .me__right{
+        width: 100%;
+    }
+    .me__left{
+        min-width: 500px;
+        padding-right: 20px;
+    }
+    .me__block {
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+    }
+    .me__left iframe{
+        min-height: 320px;
+    }
+}

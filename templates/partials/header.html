@@ -1,0 +1,45 @@
+{% load solo_tags %}
+{% get_solo 'home.InfoCompany' as info %}
+
+<header class="header">
+    <div class="header-top">
+    <div class="container">
+        <div class="header-top__desc">
+        <p>Кровельные работы от команды профессионалов</p>
+        </div>
+        <div class="header-top__description"></div>
+        <div class="header-top__time">Ежедневно с {{ info.open_time }} до {{ info.close_time }}</div>
+        <div class="header-top__email"><a href="mailto:{{ info.email }}">{{ info.email }}</a></div>
+        {% if info.instagram %}
+        <div class="header-top__instagram">
+            <a href="{{ info.instagram }}" target="_blank" alt="Instagram" title="Мы в Instagram">
+                <i class="fab fa-instagram" style="font-size: 22px"></i>
+            </a>
+        </div>
+        {% endif %}
+        {% if info.youtube %}
+        <div class="header-top__instagram">
+            <a href="{{ info.youtube }}" target="_blank" alt="Youtube" title="Мы в youtube">
+                <i class="fab fa-youtube" style="font-size: 22px"></i>
+            </a>
+        </div>
+        {% endif %}
+    </div>
+    </div>
+    <div class="header-center">
+    <div class="container">
+        <div class="header-center__logo">
+        <p>{{ info.name }}</p>
+        </div>
+        <div class="header-center__description"></div>
+        <div class="header-center__phone">
+        <svg class="svg-sprite-icon icon-phone-call btn__icon">
+            <use xlink:href="static/images/svg/symbol/sprite.svg#phone-call"></use>
+        </svg><a class="header-center__link" href="tel:{{ info.phone }}" id="PHONE_TOP">{{ info.get_format_phone }}</a>
+        </div>
+        <div class="header-center__callback">
+            <a class="btn small" data-subject="Обратный звонок" data-item="Обратный звонок">Обратный звонок</a>
+        </div>
+    </div>
+    </div>
+</header>

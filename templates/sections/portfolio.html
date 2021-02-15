@@ -1,0 +1,14 @@
+<section class="section portfolio">
+    <div class="container">
+        <h2 class="portfolio__title">Наши работы</h2>
+        <div class="portfolio-block">
+        {% for photo in portfolio_photos %}
+            <div class="portfolio-block__item">
+                <a href="{{ photo.image.url }}" data-imagelightbox="c">
+                    <img class="portfolio-block__img" src="{{ photo.image.url }}" alt="{{ photo.alt }}">
+                </a>
+            </div>
+        {% endfor %}
+        </div>
+    </div>
+</section>

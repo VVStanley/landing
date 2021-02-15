@@ -1,0 +1,21 @@
+{% load solo_tags %}
+{% get_solo 'home.ProfitBlock' as data %}
+
+<section class="section vigoda">
+    <div class="container">
+        <h2 class="vigoda__title">{{ data.caption }}</h2>
+        <p class="vigoda__desc">{{ data.description }}</p>
+        <div class="vigoda-block">
+        <div class="vigoda-block__item">Собственное гибочное производство</div>
+        <div class="vigoda-block__item">Бесплатный выезд на замер и расчет сметы</div>
+        <div class="vigoda-block__item">Материалы по цене производителя</div>
+        <div class="vigoda-block__item">Доставка материала со скидкой</div>
+        </div>
+        <div class="vigoda-block">
+        <div class="vigoda-block__item">Опыт работы более 5 лет</div>
+        <div class="vigoda-block__item">Оплата после завершения работ</div>
+        <div class="vigoda-block__item">Онлайн трансляция с объекта</div>
+        <div class="vigoda-block__item">Оплата по карте</div>
+        </div>
+    </div>
+</section>
